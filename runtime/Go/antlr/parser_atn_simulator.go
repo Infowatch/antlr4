@@ -1262,7 +1262,11 @@ func (p *ParserATNSimulator) precedenceTransition(config ATNConfig,
 		c = NewBaseATNConfig4(config, pt.getTarget())
 	}
 	if ParserATNSimulatorDebug {
-		fmt.Println("config from pred transition=" + c.String())
+		if c != nil {
+			fmt.Println("config from pred transition=" + c.String())
+		} else {
+			fmt.Println("config from pred transition is nil")
+		}
 	}
 	return c
 }
@@ -1298,7 +1302,11 @@ func (p *ParserATNSimulator) predTransition(config ATNConfig, pt *PredicateTrans
 		c = NewBaseATNConfig4(config, pt.getTarget())
 	}
 	if ParserATNSimulatorDebug {
-		fmt.Println("config from pred transition=" + c.String())
+		if c != nil {
+			fmt.Println("config from pred transition=" + c.String())
+		} else {
+			fmt.Println("config from pred transition is nil")
+		}
 	}
 	return c
 }
